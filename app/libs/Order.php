@@ -14,17 +14,19 @@ class Order
 	}
 
 	public static function create($data){
+
 		try{
 			$order =  Orders::create($data);
-			foreach ($data['order_items'] as $key => $item) {
+			foreach ($data['order_items'] as $key => $item) 
 				$order->orderItems()->create($item);
-			}
 
 			return Resp::success($order->toArray());	
+
 		}catch(Exception $e){
-			return Resp::errorCode(101);
+			return Resp::errorCode(102);
 		}
+		
 	}
 
-	
+
 }
