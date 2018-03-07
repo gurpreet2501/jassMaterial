@@ -59,7 +59,7 @@ class Data extends CI_Controller {
 			$crud = new grocery_CRUD();
 			$crud->set_theme('datatables');
 			$crud->set_table('orders');
-			$crud->columns('name','phone_no','order_date','order_status','total');
+			$crud->columns('id','name','phone_no','order_date','order_status','total');
 			$crud->unset_add();
 			$crud->unset_delete();
 			$crud->edit_fields('order_status');
